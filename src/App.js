@@ -15,7 +15,7 @@ const app = new Clarifai.App({
 const initialState={
       input:'',
       imageUrl:'',
-      box:{},
+      box:[],
       route:'signin',
       isSignedin:false,
       user:{
