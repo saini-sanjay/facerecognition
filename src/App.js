@@ -54,37 +54,23 @@ class App extends Component {
    joined:data.joined
     }})
   }
+  
   onRouteChange=(route)=>{
+    this.setState({route:route});
     if(route==='signout')
       {this.setState(initialState)
      }
      else if(route==='home')
      {this.setState({isSignedin:true})}
     // else
-    this.setState({route:route});
+    
 
   }
-  
-  /*calculateFaceLocation=(data)=>{
-    const clarifaiFace=data.outputs[0].data.regions[0].region_info.bounding_box
-     const image=document.getElementById('inputimage');
-     const width=Number(image.width);
-     const height=Number(image.height);
-     //console.log(width,height);
-     return {
-     leftCol:clarifaiFace.left_col*width,
-     topRow:clarifaiFace.top_row*height,
-     rightCol:width-(clarifaiFace.right_col*width),
-     bottomRow:height-(clarifaiFace.bottom_row*height),
-     }
-  }*/
- calculateFaceLocation = (data) => {
 
+ calculateFaceLocation = (data) => {
     const image = document.getElementById('inputimage');
     const width = Number(image.width);
     const height = Number(image.height);
-
-
     const clarifaiFaces = data.outputs[0].data.regions;
     const facesArray = [];
     clarifaiFaces.forEach((element)=>{
@@ -99,14 +85,7 @@ class App extends Component {
 
     return facesArray;
 
-  }
-
-
-
-
-
-
-  
+  }  
   displayFaceBox=(box)=>{
     this.setState({box:box});
   }
