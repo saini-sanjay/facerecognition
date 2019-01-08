@@ -64,13 +64,8 @@ class App extends Component {
     this.setState({route:route});
 
   }
-  /*componentDidMount(){
-    fetch('http://localhost:3001')
-    .then(response=>response.json())
-    .then(console.log)
-  }*/
   
-  calculateFaceLocation=(data)=>{
+  /*calculateFaceLocation=(data)=>{
     const clarifaiFace=data.outputs[0].data.regions[0].region_info.bounding_box
      const image=document.getElementById('inputimage');
      const width=Number(image.width);
@@ -82,7 +77,36 @@ class App extends Component {
      rightCol:width-(clarifaiFace.right_col*width),
      bottomRow:height-(clarifaiFace.bottom_row*height),
      }
+  }*/
+ calculateFaceLocation = (data) => {
+
+    const image = document.getElementById('inputimage');
+    const width = Number(image.width);
+    const height = Number(image.height);
+
+
+    const clarifaiFaces = data.outputs[0].data.regions;
+    const facesArray = [];
+    clarifaiFaces.forEach((element)=>{
+      const clarifaiFace = element.region_info.bounding_box;
+      facesArray.push({
+          leftCol: clarifaiFace.left_col * width,
+          topRow: clarifaiFace.top_row * height,
+          rightCol: width - (clarifaiFace.right_col * width),
+          bottomRow: height - (clarifaiFace.bottom_row * height)
+      })
+    })
+
+    return facesArray;
+
   }
+
+
+
+
+
+
+  
   displayFaceBox=(box)=>{
     this.setState({box:box});
   }

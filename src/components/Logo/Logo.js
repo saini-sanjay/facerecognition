@@ -1,7 +1,7 @@
 import React from 'react';
 import Tilt from 'react-tilt'
 import './Logo.css';
-import brain from './brain.png'
+import brain from './brain.png';
 const Logo=()=>{
  return (
 	   <div style={{paddingTop:'0px'}} className='ma4 nt5'>
