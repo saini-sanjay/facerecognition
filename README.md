@@ -1,3 +1,23 @@
+This project is developed in ReactJS,NodeJS, PostgrSQL.
+Application Usage:-
+This web App Can be Used to Locate Faces in an image link provided.
+
+I have deployed this on Heroku, Please use below link to give it a try
+http://hello-saini.herokuapp.com/
+
+Steps to follow while Using this app:-
+1. Register yourself with dummy email ID, Name and Password
+2. Once you are logged in, you will be asked to insert an image link.
+3. Copy any image URL from Internet containing Human Faces(There may be multiple human faces in image)
+4. Once you paste image URL and Click on Detect Button, image will be displayed along with a FaceBox around Faces.
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
